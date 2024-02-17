@@ -1,0 +1,299 @@
+/* Общие стили для всех устройств */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden; /* Фикс скролла по горизонтали на компьютерах */
+    position: relative;
+    font-family: 'fantasy';
+}
+
+@font-face {
+    font-family: 'fantasy';
+    src: url(./fonts/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'fantasy2';
+    src: url(./fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf);
+}
+
+
+.block {
+    position: relative;
+    margin: 5%;
+    text-align: center;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('./images/dark-fantasy-wallpapers-46367-543693-5700894.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(60%);
+    background-color: transparent; /* Убираем белый фон */
+}
+
+.logo-container {
+    position: relative;
+    max-width: 100%;
+}
+
+.logo {
+    width: 10%;
+    height: auto;
+    border-radius: 50%;
+    filter: brightness(150%);
+}
+
+.underline {
+    top: 180px;
+    left: -15%;
+    width: 40%;
+    height: 4px;
+    background-color: grey;
+    position: absolute;
+    bottom: 0;
+    transform-origin: center;
+    transform: scaleX(0);
+    animation: expandUnderline 0.8s ease-out forwards;
+}
+
+@keyframes expandUnderline {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.name,
+.job {
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.name {
+    font-style: italic;
+    margin-left: -1vw;
+    color: grey;
+    
+}
+
+.job {
+    font-size: 30px;
+    margin-left: -3vw;
+    color: gray;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px black; /* Добавлено значение text-shadow для черной обводки */
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5%;
+}
+
+.button {
+    margin-bottom: 5%;
+    width: 80%;
+    max-width: 500px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 2vw;
+    text-decoration: none;
+    user-select: none;
+    padding: 1em;
+    outline: none;
+    border: 2px solid grey;
+    border-radius: 1px;
+    transition: transform 0.2s;
+    background: rgba(255, 255, 255, .2);
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex; /* Используем flex контейнер */
+    align-items: center; /* Выравниваем по центру по вертикали */
+    justify-content: center; /* Выравниваем по центру по горизонтали */
+    text-align: center; /* Центрируем текст внутри кнопки */
+    line-height: 1.5;
+    font-family: 'fantasy2';
+    /* animation: expandButton 4s infinite ease-in-out;  */
+}
+
+.button:hover {
+    transform: scale(1.1); /* Увеличиваем размер кнопки на 10% при наведении */
+}
+
+.button-animation {
+    animation: shakeButton 2s infinite; /* Анимация добавлена здесь */
+}
+
+.button:active {
+    background: white;
+}
+
+/* Стили для устройств с шириной экрана больше 1200px */
+@media (min-width: 1200px) {
+    .your-element {
+        min-height: 200px; /* Замените на нужное вам значение */
+    }
+    
+    .block {
+        top: -50px;
+    }
+
+
+    .logo {
+        margin-top: -70px;
+    }
+
+    .name {
+        font-size: 40px;
+        margin-left: -5px;
+        margin-top: -0px;
+    }
+
+    .job {
+        font-size: 24px;
+        padding-left: 20px;
+    }
+
+    .underline {
+        left: 27%;
+        margin-top: -55px;
+    }
+
+    .buttons-container {
+        margin-top: 20.5px;
+    }
+    
+    .button {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        height: 50px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .block {
+        margin: 10%;
+        top: 70px;
+    }
+
+
+    .name {
+        font-size: 35px;
+        margin-left: -20px;
+    }
+
+    .job {
+        font-size: 28px;
+        margin-left: -30px;
+    }
+
+    .underline {
+        display: block;
+    }
+
+    .background {
+        background-color: transparent !important;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .block {
+        margin: 10%;
+        top: 70px;
+    }
+
+    .underline {
+        display: none;
+    }
+
+    .background {
+        background-color: transparent !important;
+    }
+
+    .button {
+        font-size: 20px;
+    }
+
+    .name {
+        font-size: 30px;
+    }
+
+    .job {
+        font-size: 20px;
+    }
+}
+
+@keyframes expandUnderline {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .underline {
+        display: none; /* Скрываем .underline, если ширина экрана меньше 1200px */
+    }
+}
+@media (min-width: 1500px) {
+    .logo {
+        margin-top: -300px;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .logo {
+        width: 20%;
+    }
+}
+@media (min-width: 1201px) {
+    .underline {
+        margin-top: -45px;
+        margin-left: 15px;
+    }
+}
+@media (min-width: 1430px) {
+    .underline {
+        margin-top: -30px;
+        margin-left: 15px;
+    }
+}
+@media (min-width: 1500px) {
+    .underline {
+        margin-top: -60px;
+        margin-left: 40px;
+    }
+}
+
+
+/* @keyframes expandButton {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.01);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    75% {
+        transform: scale(1.01);
+    }
+} */
+
+
