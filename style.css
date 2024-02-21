@@ -14,6 +14,8 @@ body {
 
 }
 
+/* ====================================================== */
+
 @font-face {
     font-family: 'fantasy';
     src: url(./fonts/BebasNeue-Regular.ttf);
@@ -24,6 +26,8 @@ body {
     src: url(./fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf);
 }
 
+
+/* ====================================================== */
 
 .block {
     position: relative;
@@ -72,11 +76,17 @@ body {
     animation: expandUnderline 0.8s ease-out forwards;
 }
 
+
+/* =================Анимация для полоски========================== */
+
 @keyframes expandUnderline {
     to {
         transform: scaleX(1);
     }
 }
+
+
+/* ====================================================== */
 
 .name,
 .job {
@@ -129,22 +139,18 @@ body {
     background: rgba(255, 255, 255, .2);
     cursor: pointer;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    display: flex; /* Используем flex контейнер */
-    align-items: center; /* Выравниваем по центру по вертикали */
-    justify-content: center; /* Выравниваем по центру по горизонтали */
-    text-align: center; /* Центрируем текст внутри кнопки */
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
     line-height: 1.5;
     font-family: 'fantasy2';
     animation: slideInLeft 1.5s;
 }
 
-/* .button-text {
-    animation: text-focus-in 5s; 
-} */
-
 
 .button:hover {
-    transform: scale(1.1); /* Увеличиваем размер кнопки на 10% при наведении */
+    transform: scale(1.1);
 }
 
 
@@ -158,23 +164,6 @@ body {
 .button:nth-child(4) {
     animation: slideInRight 1.5s
 }
-
-
-
-/* @keyframes expandButton {
-    0%, 100% {
-        transform: scale(1);
-    }
-    25% {
-        transform: scale(1.01);
-    }
-    50% {
-        transform: scale(1.02);
-    }
-    75% {
-        transform: scale(1.01);
-    }
-} */
 
 
 .modal {
@@ -223,7 +212,7 @@ body {
 }
 
 
-/* =================================================*/
+/* =================Расширение для всех устройств=========================*/
 @media (min-width: 1200px) {
     .your-element {
         min-height: 200px; /* Замените на нужное вам значение */
@@ -402,6 +391,22 @@ body {
     }
 }
 
+
+@media (max-height: 799px) {
+    .block {
+        margin-top: -50px;
+    }
+    .button {
+        margin-bottom: 20px;
+    }
+}
+@media (min-height: 800px) {
+    .block {
+        margin-top: 100px;
+    }
+}
+
+/* Задать параметры для минимальной высоты */
 
 /* ======================================== */
 
